@@ -1,13 +1,11 @@
-const thlim = {
-  name: "thLim",
-  age: 28,
-  gender: "male",
-};
+import { people, thlim, getById } from "./db";
 
 const resolvers = {
   Query: {
-    name: () => "thLim",
-    person: () => thlim,
+    author: () => thlim,
+    people: () => people,
+    person: (_, { id }) => getById(id)
   },
 };
+
 export default resolvers;

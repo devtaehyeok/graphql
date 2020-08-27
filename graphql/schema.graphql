@@ -1,11 +1,12 @@
-type Thlim {
-    name: String!
-    age: Int!
-    gender: String!
+type Person {
+  id: Int!
+  name: String!
+  age: Int!
+  gender: String!
 }
 
-
 type Query {
-    name: String!
-    person: Thlim!
+  people: [Person]!
+  person(id: Int!): Person
+  author: String!
 }
